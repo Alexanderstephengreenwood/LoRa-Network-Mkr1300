@@ -56,9 +56,20 @@ To activate the devices on the LoRa network, two choices are given:
 6. The Network Server sends the JoinAccept(devAddr, AppNonce) to the device
 7. The device derives NwkSKey & AppSKey
 
+<b>Provisioning your device</b>
 
-As I'm based in Switzerland, I opted for the Swisscom network with a GUI for setting up your devices and authorisations at this address: https://portal.lpn.swisscom.ch The portal is based on ThingPark
+In order to provision a device, you'll first have to declare the device on the network server. To do so, you'll have to subscribe to a LoRa service provider (or use your personal LoRa gateway). To find a provider check this link https://www.lora-alliance.org/about-the-alliance, Alternatively one could purchase a LoRa modem to interface with home/lab devices via your private IP networks. https://lorixone.io/#products provides a cheap gateway.
 
-Obviously without an access to a LoRa network your Arduinomkr1300 is not of much use, although you could still use it like an Arduino mkrZero. Alternatively one could purchase a LoRa modem to interface with at home/at a lab via your private IP networks. https://lorixone.io/#products provides a cheap gateway
+The LoRa provider will probably ask that you insert at least the following three parameters;
+
+- Application server address: Create an Application Server to define a destination where your data will be forwarded to comprised of the name of the server, the content type (XML/JSON) and the URL to your application server
+- Application server routing profile: the type of server and your application server address
+- Device profile: create a device profile (in my case via OTAA); <devicename>,<DevEUI>,<AppEUI>,<AppKey> (can be DevEUI+AppEUI), <device profile> (in the case of the Arduino it would be LoRaWAN 1.0 class A)
+
+<b>First steps with the Arduino MKR 1300 WAN</b>
+
+As I'm based in Switzerland, I opted for the Swisscom network with a GUI for setting up the devices and authorisations at this address: https://portal.lpn.swisscom.ch The portal is based on ThingPark
+
+Obviously without an access to a LoRa network your Arduinomkr1300 is not of much use, although you could still use it like an Arduino mkrZero.
 
 
