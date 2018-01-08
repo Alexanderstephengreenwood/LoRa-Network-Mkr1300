@@ -62,14 +62,20 @@ In order to provision a device, you'll first have to declare the device on the n
 
 The LoRa provider will probably ask that you insert at least the following three parameters;
 
-- Application server address: Create an Application Server to define a destination where your data will be forwarded to comprised of the name of the server, the content type (XML/JSON) and the URL to your application server
+- Application server address: Create an Application Server to define a destination where your data will be forwarded to. This is comprised of the name of the server, the content type (XML/JSON) and the URL to your application server
 - Application server routing profile: the type of server and your application server address
-- Device profile: create a device profile (in my case via OTAA); <devicename>,<DevEUI>,<AppEUI>,<AppKey> (can be DevEUI+AppEUI), <device profile> (in the case of the Arduino it would be LoRaWAN 1.0 class A)
+- Device profile: create a device profile (in my case via OTAA): <devicename>,<DevEUI>,<AppEUI>,<AppKey> (can be DevEUI+AppEUI), <device profile> (in the case of the Arduino it would be LoRaWAN 1.0 class A)
+  
+  
 
 <b>First steps with the Arduino MKR 1300 WAN</b>
 
-As I'm based in Switzerland, I opted for the Swisscom network with a GUI for setting up the devices and authorisations at this address: https://portal.lpn.swisscom.ch The portal is based on ThingPark
+As I'm based in Switzerland, I opted for the Swisscom network. They provide a GUI for setting up the devices and authorisations at this address: https://portal.lpn.swisscom.ch The portal is based on ThingPark
 
-Obviously without an access to a LoRa network your Arduinomkr1300 is not of much use, although you could still use it like an Arduino mkrZero.
+Obviously without an access to a LoRa network your Arduino mkr 1300 is not of much use, although you could still use it like an Arduino mkrZero.
 
+When trying to make my first transmission to the LoRaWAN, I struggled in finding the different keys to ba able to activate my device on the network server. Here is how I found the keys.
+
+<b>Finding the MKR WAN 1300 keys</b>
+In the Arduino IDE (local or web) go the specific mkr wan 1300 examles. Browse to the specific MKRWAN(5) folder. You will then find the FirstConfiguration.ino example (attached in the repo)
 
