@@ -90,6 +90,8 @@ The AppEUI, is provided by your service provider. In the Swisscom case they prov
 
 If all is setup correctly after a short while the serial monitor should tell you "Message sent correctly!"
 
-You can then go to the LoraSendAndReceive.ino example (in the mkrwan1300 example folder of the IDE) to send your first strings over to the network server
+You can then go to the <a href="https://github.com/Alexanderstephengreenwood/LoRa-Network-Mkr1300/blob/master/LoraSendAndReceive.ino">LoraSendAndReceive.ino example</a> (in the mkrwan1300 example folder of the Arduino IDE) to send your first strings over to the network server
+
+More to come about the Application server
 
 
