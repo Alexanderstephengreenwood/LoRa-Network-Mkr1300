@@ -77,5 +77,19 @@ Obviously without an access to a LoRa network your Arduino mkr 1300 is not of mu
 When trying to make my first transmission to the LoRaWAN, I struggled in finding the different keys to ba able to activate my device on the network server. Here is how I found the keys.
 
 <b>Finding the MKR WAN 1300 keys</b>
-In the Arduino IDE (local or web) go the specific mkr wan 1300 examles. Browse to the specific MKRWAN(5) folder. You will then find the <a href="https://github.com/Alexanderstephengreenwood/LoRa-Network-Mkr1300/blob/master/FirstConfiguration.ino">FirstConfiguration.ino example</a> (attached in the repo)
+
+In the Arduino IDE (local or web) go the specific mkr wan 1300 examles. Browse to the specific MKRWAN(5) folder. You will then find the <a href="https://github.com/Alexanderstephengreenwood/LoRa-Network-Mkr1300/blob/master/FirstConfiguration.ino">FirstConfiguration.ino example</a> (attached in the repo). Run the Sketch and check the serial output --> You have now found the device EUI key (devEUI) unique to your Arduino mkr.
+
+The FirstConfirguration.ino sketch will then ask you which activation protocol you wish to use. Hit 1 for the OTAA protocol in the serial monitor.
+
+You will be asked to insert AppKey and then AppEUI.
+
+For the AppKey I used http://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx to create a random 128bit key. Rember to write it down somewhere as you'll need to provide this each time your register your device in new sketches
+
+The AppEUI, is provided by your service provider. In the Swisscom case they provided me that key (AppEUI is F03D29AC7100xxxx)
+
+If all is setup correctly after a short while the serial monitor should tell you "Message sent correctly!"
+
+You can then go to the LoraSendAndReceive.ino example (in the mkrwan1300 example folder of the IDE) to send your first strings over to the network server
+
 
