@@ -4,14 +4,16 @@ Using the LoRa network with an Arduino mkr1300 first steps
 Having my hands on the Arduino mkr1300, that took a bit of time to land in my letter box, I thought I'd share my first experiences and pain points to establish a link with my LoRa network.
 
 <b>About the LoRa network</b>
+
 To understand the fundamentals of LoRa best place to visit is https://www.lora-alliance.org/
-Made short LoRaWAN enables to connect low power devices to a low power connectivity mech to mostely realise IoT services unidorectionnally or bidirectionnally. These different ways of communicating back and forth can be defined via diferent LoRaWAN classes;
+Made short LoRaWAN enables to connect low power devices to a low power connectivity mech to mostely realise IoT services unidirectionnally or bidirectionnally. These different ways of communicating back and forth can be defined via diferent LoRaWAN classes;
 
 - A («all») Battery powered sensors, or actuators with no latency constraint. Most energy efficient communication class. Must be supported by all devices
 - B («beacon») Battery powered actuators. Energy efficient communication class for latency controlled downlink. Based on slotted communication synchronized with a network beacon
 - C («continuous») Mains powered actuators. Devices which can afford to listen continuously. No latency for downlink communication.
 
 <b>About the LoRaWAN security keys</b>
+
 In order to make a hand shake between your device and the LoRaWAN network, a certain number of keys need to be provided to secure the data you a sharing.
 
 - DevEUI: Device Unique Identifier: Unique 64 bits serial number. Defined and acquired by the device manufacturer
