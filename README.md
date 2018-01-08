@@ -40,15 +40,21 @@ To activate the devices on the LoRa network, two choices are given:
 
 - <b>Activation By Personalisation</b>
 
-1. Provide the Device Manufacturer's in memory on the device: devEUI, devAddr, AppSKey, NwkSKey
-2. Transmit the keys to the Network server (devEUI, devAddr, NwkSKey)
-3. Transmit the keys to the Application server (devEUI, AppSKey)
+1. Provide the Device Manufacturer's keys stored in memory on the device: devEUI, devAddr, AppSKey, NwkSKey
+2. The device transmits the keys to the Network server (devEUI, devAddr, NwkSKey)
+3. The device transmits the keys to the Application server (devEUI, AppSKey)
 4. The network server activates the devices in the system
 5. On run time, the data is transmitted to the network server, then validated and then pushed to the application server
 
+- <b>Over-the-Air Activation</b> (in my case the one used to activate the Arduino mkr 1300 to the network)
 
-
-2) Over-the-Air Activation
+1. Provide the Device Manufacturer's keys stored in memory on the device: devEUI, AppKey
+2. The device transmits securely the keys to the Network server (devEUI, AppKey)
+3. Network Server store the AppKeyin JoinServer that is part of Network Server
+4. The device sends a JoinRequest(devEUI, AppEUI, devNonce)
+5. The network server uses AppKey, devNonce & generatedAppNonce to derive the NwkSKey and AppSKey
+6. The Network Server sends the JoinAccept(devAddr, AppNonce) to the device
+7. The device derives NwkSKey & AppSKey
 
 
 As I'm based in Switzerland, I opted for the Swisscom network with a GUI for setting up your devices and authorisations at this address: https://portal.lpn.swisscom.ch The portal is based on ThingPark
