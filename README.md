@@ -92,6 +92,12 @@ If all is setup correctly after a short while the serial monitor should tell you
 
 You can then go to the <a href="https://github.com/Alexanderstephengreenwood/LoRa-Network-Mkr1300/blob/master/LoraSendAndReceive.ino">LoraSendAndReceive.ino example</a> (in the mkrwan1300 example folder of the Arduino IDE) to send your first strings over to the network server
 
-More to come about the Application server
+
+
+<b>About the application server</b>
+
+As I'm always happy to learn something you I chose to not try and run my app server with php and mysql, but to learn Nodejs and setting up a CRUD service with Express and Mongodb.
+
+In the LoRaWAN settings the network server allows you to either choose to relay XML or JSON files. Nodejs is the perfect candidate to handle Json files and storing these in the MangoDB service. 
 
 
