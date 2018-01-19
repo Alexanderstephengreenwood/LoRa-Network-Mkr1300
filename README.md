@@ -96,8 +96,10 @@ You can then go to the <a href="https://github.com/Alexanderstephengreenwood/LoR
 
 <b>About the application server</b>
 
-As I'm always happy to learn something you I chose to not try and run my app server with php and mysql, but to learn Nodejs and setting up a CRUD service with Express and Mongodb.
+As I'm always happy to learn something new I chose to not try and run my app server with php and mysql, but to learn Nodejs and setting up a CRUD service with Express and Mongodb.
 
-In the LoRaWAN settings the network server allows you to either choose to relay XML or JSON files. Nodejs is the perfect candidate to handle Json files and storing these in the MangoDB service. 
+In the LoRaWAN settings the network server allows you to either choose to relay XML or JSON files. Nodejs is the perfect candidate to handle Json files and storing these in the MangoDB service.
+
+For setting-up this service on your server, ask Google. Summarized; you'll need to install the mongodb server, nodejs and npm then add Express, mongodb, body-parser (nodejs --> dependencies": "body-parser", "express", "mongodb") Then open your api server's firewall so that you can post to your machine for the web (LoRaWAN uses the http POST method with specific headers and JSON body to populate)
 
 
