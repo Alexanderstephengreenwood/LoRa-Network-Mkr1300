@@ -127,7 +127,7 @@ The following structure is submitted to your application server via HTTP Post wh
 
 the Json body
 
-{
+<code>{
 "DevEUI_uplink": {
                   "Time": "2016-10-26T14:52:00.331+02:00",
                   "DevEUI": "FF000012FF000012",
@@ -175,5 +175,6 @@ the Json body
                    "DevAddr": "0981DACF"
   }
 }
+</code°
 
 
