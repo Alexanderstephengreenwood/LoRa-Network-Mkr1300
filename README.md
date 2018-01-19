@@ -96,6 +96,8 @@ You can then go to the <a href="https://github.com/Alexanderstephengreenwood/LoR
 
 <b>About the application server</b>
 
+The purpose of the application server is gather messages sent by your devices to the Network server that then relays it yo tour Application server. The application server is a machine(s) you own that are capable of translating http post to run the required intelligence you are expecting from your end devices (i.e. if a specific temperature sensor give a value that needs to trigger a fan...)
+
 As I'm always happy to learn something new I chose to not try and run my app server with php and mysql, but to learn Nodejs and setting up a CRUD service with Express and Mongodb.
 
 In the LoRaWAN settings the network server allows you to either choose to relay XML or JSON files. Nodejs is the perfect candidate to handle Json files and storing these in the MangoDB service.
