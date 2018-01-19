@@ -109,4 +109,4 @@ To see the actual code of the nodejs/Express/MongoDB you can have a look at this
 
 <b>Decoding your devices message</b>
 
-The bit you'll be interessted to decode is the actual reading from your device (temperature or whatever sensor gathering data). This bit of data is passed over from the Network Server in "the payload_hex" field of the Jason POST. Y
+The bit you'll be interessted to decode is the actual reading from your device (temperature or whatever sensor gathering data). This bit of data is passed over from the Network Server as "the payload_hex" field of the Jason POST. This field needs to be provided in HEX ASCII format. The arduino sketch in the mkrwan examples called LoraSendAndReceive does just that
