@@ -117,4 +117,63 @@ When I played around with the LoraSendAndReceive sketch, where I connected to th
 
 I reverted back to my MongoDB-Compass GUI to see what had been inserted in the DB and "oh miracle" the json field "IDEpayload_hex:74656d70657261747572653a34320d" showed "temperature:42" in HEX  :)))
 
+You can have a look of the full sample of the Json file the Network server will POST to your Application server see <a href="https://github.com/Alexanderstephengreenwood/LoRa-Network-Mkr1300/blob/master/UplinkExamplePostLoRaWAN.json">UplinkExamplePostLoRaWAN.json</a>
+
+<h3>Strucutre of the Uplink POST</h3>
+
+The following structure is submitted to your application server via HTTP Post where <as-url> is your application server address i.e. api.mywebsite.com/sensor
+
+>> POST <as-url>?LrnDevEui=000000000F1D8693&LrnFPort=2&LrnInfos=UPHTTP_LAB_LORA&AS_ID=app1.sample.com&Time=2016-01-11T14%3A11%3A11.333%2B02%3A00&Token=fd0b0b00464aa798a59282d64eaa70813e33bff87682880db49638569d096aad
+
+the Json body
+
+{
+"DevEUI_uplink": {
+                  "Time": "2016-10-26T14:52:00.331+02:00",
+                  "DevEUI": "FF000012FF000012",
+                  "FPort": "1",
+                  "FCntUp": "20",
+                  "ADRbit": "1",
+                  "MType": "2",
+                  "FCntDn": "2",
+                  "payload_hex": "000009f4",
+                  "mic_hex": "987bda77",
+                  "Lrcid": "00000401",
+                  "LrrRSSI": "-114.000000",
+                  "LrrSNR": "-2.000000",
+                  "SpFact": "7",
+                  "SubBand": "G1",
+                  "Channel": "LC1",
+                  "DevLrrCnt": "2",
+                  "Lrrid": "29000150",
+                  "Late":"0",
+                  "LrrLAT": "47.374199",
+                  "LrrLON": "8.537522",
+                  "Lrrs": { 
+                          "Lrr":
+                          [ { 
+                            "Lrrid": "29000150",
+                            "Chain": "0",
+                            "LrrRSSI": "-114.000000",
+                            "LrrSNR": "-2.000000",
+                            "LrrESP": "-118.124428"
+                           },
+                           { 
+                           "Lrrid": "29000107",
+                           "Chain": "0",
+                           "LrrRSSI": "-119.000000",
+                           "LrrSNR": "-8.250000",
+                           "LrrESP": "-127.855560"
+                           } 
+                           ] },
+                   "CustomerID": "100000304",
+                   "CustomerData": {"alr":{"pro":"LORA/Generic","ver":"1"}},
+                   "ModelCfg": "0",
+                   "AppSKey": "a13a0a32570e67839a82ce3c06cc4b4e",
+                   "InstantPER": "0.090909",
+                   "MeanPER": "0.004545",
+                   "DevAddr": "0981DACF"
+  }
+}
+
 
