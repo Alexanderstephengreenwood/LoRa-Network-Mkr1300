@@ -96,12 +96,17 @@ You can then go to the <a href="https://github.com/Alexanderstephengreenwood/LoR
 
 <b>About the application server</b>
 
-The purpose of the application server is gather messages sent by your devices to the Network server that then relays it yo tour Application server. The application server is a machine(s) you own that are capable of translating http post to run the required intelligence you are expecting from your end devices (i.e. if a specific temperature sensor give a value that needs to trigger a fan...)
+The purpose of the application server is to gather messages sent by your devices to the Network server that then relays it to your Application server. The application server is a machine(s) you own that are capable of translating http post from the Network server (your LoRaWAN provider) to run the required intelligence you are expecting from your end devices (i.e. if a specific temperature sensor give a value that needs to trigger a fan...)
 
 As I'm always happy to learn something new I chose to not try and run my app server with php and mysql, but to learn Nodejs and setting up a CRUD service with Express and Mongodb.
 
 In the LoRaWAN settings the network server allows you to either choose to relay XML or JSON files. Nodejs is the perfect candidate to handle Json files and storing these in the MangoDB service.
 
-For setting-up this service on your server, ask Google. Summarized; you'll need to install the mongodb server, nodejs and npm then add Express, mongodb, body-parser (nodejs --> dependencies": "body-parser", "express", "mongodb") Then open your api server's firewall so that you can post to your machine for the web (LoRaWAN uses the http POST method with specific headers and JSON body to populate)
+For setting-up this service on your server, ask Google. Summarized; you'll need to install the mongodb server, nodejs and npm then add Express, mongodb, body-parser (nodejs --> dependencies": "body-parser", "express", "mongodb") Then open your api server's firewall so that services can post to your machine from the web (LoRaWAN uses the http POST method with specific headers and a JSON body)
+
+To see the actual code of the nodejs/Express/MongoDB you can have a look at this folder
 
 
+<b>Decoding your devices message</b>
+
+The bit you'll be interessted to decode is the actual reading from your device (temperature or whatever sensor gathering data). This bit of data is passed over from the Network Server in "the payload_hex" field of the Jason POST. Y
