@@ -109,4 +109,12 @@ To see the actual code of the nodejs/Express/MongoDB you can have a look at this
 
 <b>Decoding your devices message</b>
 
-The bit you'll be interessted to decode is the actual reading from your device (temperature or whatever sensor gathering data). This bit of data is passed over from the Network Server as "the payload_hex" field of the Jason POST. This field needs to be provided in HEX ASCII format. The arduino sketch in the mkrwan examples called LoraSendAndReceive does just that
+The bit you'll be interessted to decode is the actual reading from your device (temperature or whatever sensor gathering data). This bit of data is passed over from the Network Server in the field called "payload_hex" of the Json POST. This field needs to be provided in HEX ASCII format.
+
+The arduino sketch in the mkrwan examples called <a href="https://github.com/Alexanderstephengreenwood/LoRa-Network-Mkr1300/blob/master/LoraSendAndReceive.ino">"LoraSendAndReceive"</a> does just that!
+
+When I played around with the LoraSendAndReceive sketch, where I connected to the LoRa network and inserted the message to push back to my API server via the Network server, I wrote "temperature:42" in the serial monitor of the Arduino. The sketch replied with a "success"
+
+I reverted back to my MongoDB-Compass GUI to see what had been inserted in the DB and "oh miracle" the json field "IDEpayload_hex:74656d70657261747572653a34320d" showed "temperature:42" in HEX  :)))
+
+
