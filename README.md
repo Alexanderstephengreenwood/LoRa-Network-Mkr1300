@@ -175,6 +175,6 @@ the Json body
                    "DevAddr": "0981DACF"
   }
 }
-</code°
+</code>
 
 
